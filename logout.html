@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="pragma" content="no-cache" />
+    <meta http-equiv="expires" content="-1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="RubenG7">
+    <meta http-equiv="refresh" content="2; url=$(link-login)">
+    <link rel="shortcut icon" href="img/icon.ico">
+    <title>PRO-NET - Desconectar</title>
+    <link href="ext/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+    <link rel="stylesheet" href="css/estilos.css">
+    <script>
+        function openLogin() {
+        if (window.name != 'hotspot_logout') return true;
+        open('$(link-login)', '_blank', '');
+        window.close();
+        return false;
+        }
+        function redirigirAinicio() {
+            function Redirigir() {
+                location.href = unescape('$(link-login)');
+            }
+            setTimeout("Redirigir()", 0);
+        }
+    </script>
+</head>
+<body onLoad="redirigirAinicio()">
+    <div class="container-fluid">
+        <div class="m-0 vh-100 row justify-content-center align-items-center">
+            <div class="col-12 col-sm-2 col-md-3"></div>
+            <div class="col-12 col-sm-8 col-md-6">
+                <div class="fcWhite tcBlue rounded-3 pt-2 pb-2 shadow-lg border border-3 border-cBlue">
+                    <div class="fondoLogo">
+                        <div class="fondoOpaco">
+                            <div class="text-center">
+                                <h4 class="tcBlue tt10 fw-bold">
+                                    ¡Acabas de cerrar sesión!
+                                </h4>
+                            </div>
+                            <div class="m-4 mt-0 mb-0 estado">
+                                <form action="$(link-logout)" name="logout" onSubmit="return openLogout()">
+                                    <div class="row align-items-center p-1">
+                                        <div class="col-6 bold">Nombre de usuario</div>
+                                        <div class="col-6">$(username)</div>
+                                    </div>
+                                    <div class="col-12">
+                                        <div class="border border-1 border-cBlue shadow"></div>
+                                    </div>
+                                    <div class="row align-items-center p-1">
+                                        <div class="col-6 bold">Dirección IP</div>
+                                        <div class="col-6">$(ip)</div>
+                                    </div>
+                                    <div class="col-12">
+                                        <div class="border border-1 border-cBlue shadow"></div>
+                                    </div>
+                                    <div class="row align-items-center p-1">
+                                        <div class="col-6 bold">Dirección MAC</div>
+                                        <div class="col-6">$(mac)</div>
+                                    </div>
+                                    <div class="col-12">
+                                        <div class="border border-1 border-cBlue shadow"></div>
+                                    </div>
+                                    <div class="row align-items-center p-1">
+                                        <div class="col-6 bold">Tiempo de sesión</div>
+                                        <div class="col-6">$(uptime)</div>
+                                    </div>
+                                    <div class="col-12">
+                                        <div class="border border-1 border-cBlue shadow"></div>
+                                    </div>
+                                    $(if session-time-left)
+                                    <div class="row align-items-center p-1">
+                                        <div class="col-6 bold">Tiempo restante</div>
+                                        <div class="col-6">$(session-time-left)</div>
+                                    </div>
+                                    <div class="col-12">
+                                        <div class="border border-1 border-cBlue shadow"></div>
+                                    </div>
+                                    $(endif)
+                                    <div class="row align-items-center p-1 pb-2">
+                                        <div class="col-6 bold">Bytes arriba/abajo:</div>
+                                        <div class="col-6">$(bytes-in-nice) / $(bytes-out-nice)</div>
+                                    </div>
+                                    <div class="col-12">
+                                        <div class="border border-1 border-cBlue shadow"></div>
+                                    </div>
+                                    <div class="d-grid gap-2">
+                                        <form action="$(link-login)" name="login" onSubmit="return openLogin()">
+                                            <input type="submit" class="btn bold mt-2 boton" value="CONECTAR">
+                                        </form>
+                                    </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="mt-4 mb-2 text-center bold text-light">
+                    <span class="efecto5">Pro-Net C.A.</span>
+                </div>
+            </div>
+            <div class="col-12 col-sm-2 col-md-3"></div>
+        </div>
+    </div>
+<script src="ext/bootstrap.bundle.min.js" type="text/javascript"></script>
+</body>
+</html>
+<!-- Autor: RubenG7 -->

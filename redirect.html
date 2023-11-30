@@ -1,0 +1,18 @@
+$(if http-status == 302)Hotspot redirect$(endif)
+$(if http-header == "Location")$(link-redirect)$(endif)
+<!doctype html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="pragma" content="no-cache" />
+    <meta http-equiv="expires" content="-1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="RubenG7">
+    <meta http-equiv="refresh" content="0; url=$(link-redirect)">
+    <link rel="shortcut icon" href="img/icon.ico">
+    <title>...</title>
+</head>
+<body>
+</body>
+</html>
+<!-- Autor: RubenG7 -->

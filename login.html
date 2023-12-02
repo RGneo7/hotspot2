@@ -11,6 +11,9 @@
     <link href="ext/bootstrap.min.css" rel="stylesheet" type="text/css"/>
     <link rel="stylesheet" href="css/estilos.css">
     <link rel="stylesheet" href="css/login.css">
+    
+    <script src="ext/jquery-3.6.0.min.js" type="text/javascript"></script>
+    <script src="ext/bootstrap.bundle.min.js" type="text/javascript"></script>
 </head>
 <body class="container-fluid">
     <header>
@@ -1274,7 +1277,7 @@
                         <form name="login" action="$(link-login-only)" method="post" $(if chap-id) onSubmit="return doLogin()" $(endif)>
                             <input type="hidden" name="dst" value="https://www.google.com/" />
                             <input type="hidden" name="popup" value="true" />
-                            <div class="texto-inicio pt-2">
+                            <div class="texto-inicio pt-2 pb-2">
                                 <p class="letras3 $(if error)alert$(endif) letraGeneral">
                                     $(if error == "")Inicie sesión para usar el servicio.
                                     $(endif)
@@ -2497,9 +2500,6 @@
         </div>
         </div>
     </div>
-    
-    <script src="ext/jquery-3.6.0.min.js" type="text/javascript"></script>
-    <script src="ext/bootstrap.bundle.min.js" type="text/javascript"></script>
     
     <!-- si existe registro de un error se muestra el modal para el inicio de usuarios -->
     $(if error)

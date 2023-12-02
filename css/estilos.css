@@ -239,6 +239,12 @@ nav,
 .imgLogo {
     height: 6.5vw;
 }
+i {
+    color: #112E76;
+}
+i:hover {
+    color: #ff000A;
+}
 .espacioMenuContenido {
     height: 95px;
 }
@@ -247,12 +253,15 @@ nav,
     color: #fff !important;
     font-weight: bold !important;
     border-radius: 7px !important;
-    transition: box-shadowr 1s ease-in-out;
+    transition: box-shadow .3s ease-in-out;
 }
 .boton:hover {
     cursor: pointer;
-    font-weight: bold !important;
     box-shadow: 0 0 5px 1px #112E76 !important;
+    
+    background-color: #fff !important;
+    color: #112E76 !important;
+    /* border: 1px solid #112E76 !important; */
 }
 .boton:active {
     color: #ff000A !important;
@@ -499,76 +508,6 @@ nav,
     background-color: #112E76;
     color: #fff;
 }
-.input-group:hover span {
-    background-color: #ff000A;
-    border: 0px;
-    margin: 0px;
-}
-#ErrorForm {
-    color: #ff000A;
-    font-weight: bold;
-    text-transform: uppercase;
-    text-align: center;
-}
-.input {
-    border: 2px solid #112E76;
-    border-radius: 7px;
-}
-.input-group:hover {
-    border: 2px solid #ff000A;
-    border-radius: 7px;
-}
-.inputError {
-    border: 2px solid #ff000A;
-    border-radius: 7px;
-}
-.input-group span {
-    background-color: #112E76;
-    border: 0px;
-    margin: 0px;
-}
-.input span i {
-    color: #fff;
-}
-.box {
-    position: relative;
-}
-input {
-    color: #112E76;
-    font-size: 1em;
-    background: #fff;
-    border: 1px solid #112E76;
-    border-radius: 4px;
-    outline: none;
-    width: 100%;
-    padding: 10px;
-}
-label {
-    position: absolute !important;
-    left: 0 !important;
-    color: #112E76 !important;
-    pointer-events: none !important;
-    padding: 7px !important;
-    transition: 0.5s !important;
-    font-weight: bold;
-}
-input:valid~label,
-input:focus~label {
-    color: #ff000A !important;
-    background-color: #fff !important;
-    letter-spacing: 2.5px !important;
-    transform: translateX(10px) translateY(-12px) !important;
-    padding: 0 2px !important;
-    text-transform: uppercase !important;
-    z-index: 10000;
-    font-weight: normal;
-}
-.form-control:focus {
-    color: none !important;
-    background-color: none !important;
-    border-color: none !important;
-    box-shadow: none !important;
-}
 .fondoLogo {
     background-image: url('../img/logo.png');
     background-repeat: no-repeat;
@@ -591,10 +530,6 @@ input:focus~label {
     cursor: pointer;
     color: #0f7926 !important;
 }
-
-/*
-<svg class="iconos" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M224 256A128 128 0 1 0 224 0a128 128 0 1 0 0 256zm-45.7 48C79.8 304 0 383.8 0 482.3C0 498.7 13.3 512 29.7 512H418.3c16.4 0 29.7-13.3 29.7-29.7C448 383.8 368.2 304 269.7 304H178.3z"/></svg>
-*/
 
 .icon{
     color: #122d73;

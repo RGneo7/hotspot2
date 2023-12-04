@@ -1170,20 +1170,26 @@
                     function doLogin() {
                         var username = document.getElementById("username").value;
                         var password = document.getElementById("password").value;
+                        var div_user = document.getElementById("divUser");
+                        var div_pass = document.getElementById("divPass");
                         
                         if (username.length == 0 || password.length == 0) {
                             document.getElementById('ErrorForm').innerHTML='Ingresar los datos requeridos.';
                             if (username.length == 0) {
-                                document.getElementById("divUser").style.border = "2px solid #ff000A";
+                                div_user.classList.remove('error_not');
+                                div_user.classList.add('error_yes');
                             }
                             else{
-                                document.getElementById("divUser").style.border = "2px solid #112E76";
+                                div_user.classList.remove('error_yes');
+                                div_user.classList.add('error_not');
                             }
                             if (password.length == 0) {
-                                document.getElementById("divPass").style.border = "2px solid #ff000A";
+                                div_pass.classList.remove('error_not');
+                                div_pass.classList.add('error_yes');
                             }
                             else{
-                                document.getElementById("divPass").style.border = "2px solid #112E76";
+                                div_pass.classList.remove('error_yes');
+                                div_pass.classList.add('error_not');
                             }
                             return false;
                         }
@@ -1191,41 +1197,52 @@
                         if (username.length <= 3 || password.length <= 3) {
                             document.getElementById('ErrorForm').innerHTML='El nombre de usuario o contraseña no deben ser menor a 3 dígitos.';
                             if(username.length <= 3){
-                                document.getElementById("divUser").style.border = "2px solid #ff000A";
+                                div_user.classList.remove('error_not');
+                                div_user.classList.add('error_yes');
                             }
                             else{
-                                document.getElementById("divUser").style.border = "2px solid #112E76";
+                                div_user.classList.remove('error_yes');
+                                div_user.classList.add('error_not');
                             }
 
                             if(password.length <= 3){
-                                document.getElementById("divPass").style.border = "2px solid #ff000A";
+                                div_pass.classList.remove('error_not');
+                                div_pass.classList.add('error_yes');
                             }
                             else{
-                                document.getElementById("divPass").style.border = "2px solid #112E76";
+                                div_pass.classList.remove('error_yes');
+                                div_pass.classList.add('error_not');
                             }
                             return false;
                         }
                         else
                         if(ContarMayusculas(username)>=1){
                             document.getElementById('ErrorForm').innerHTML='No se permiten mayúsculas en el campo usuario.';
-                            document.getElementById("divUser").style.border = "2px solid #ff000A";
+                            div_user.classList.remove('error_not');
+                            div_user.classList.add('error_yes');
+                            div_pass.classList.remove('error_yes');
+                            div_pass.classList.add('error_not');
                             return false;
                         }
                         else
                         if(verificarSinEspacios(username) || verificarSinEspacios(password)){
                             document.getElementById('ErrorForm').innerHTML='Los datos ingresados contienen espacios vacíos.';
                             if(verificarSinEspacios(username)){
-                                document.getElementById("divUser").style.border = "2px solid #ff000A";
+                                div_user.classList.remove('error_not');
+                                div_user.classList.add('error_yes');
                             }
                             else{
-                                document.getElementById("divUser").style.border = "2px solid #112E76";
+                                div_user.classList.remove('error_yes');
+                                div_user.classList.add('error_not');
                             }
 
                             if(verificarSinEspacios(password)){
-                                document.getElementById("divPass").style.border = "2px solid #ff000A";
+                                div_pass.classList.remove('error_not');
+                                div_pass.classList.add('error_yes');
                             }
                             else{
-                                document.getElementById("divPass").style.border = "2px solid #112E76";
+                                div_pass.classList.remove('error_yes');
+                                div_pass.classList.add('error_not');
                             }
                             return false;
                         }
